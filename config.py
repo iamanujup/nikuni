@@ -19,11 +19,11 @@ load_dotenv()
 # ── Pyrogram (main.py bot) ────────────────────────────────────────────────────
 API_ID    = int(os.getenv("API_ID", "5074166"))
 API_HASH  = os.getenv("API_HASH", "3cb93a9a9345592f5e6a42020687cdbe")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8758223216:AAHFpQn4aqh994XmmD3z3OuptbK6EY3Jn0k")
 
 # ── Telegram — secondary bot token used for HTML/API calls ───────────────────
-BOT_TOKEN_2 = os.getenv("BOT_TOKEN_2", "")
-
+BOT_TOKEN_2 = os.getenv("BOT_TOKEN_2", "8758223216:AAHFpQn4aqh994XmmD3z3OuptbK6EY3Jn0k")
+ 
 # ── MongoDB ───────────────────────────────────────────────────────────────────
 MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://iamanujup79_db_user:iamanujup79_db_user@cluster0.yscdiem.mongodb.net/?appName=Cluster0")          # Primary connection string
 MONGO_URI_2 = os.getenv("MONGO_URI_2", "mongodb+srv://iamanujup79_db_user:iamanujup79_db_user@cluster0.yscdiem.mongodb.net/?appName=Cluster0")      # Secondary / replica connection
