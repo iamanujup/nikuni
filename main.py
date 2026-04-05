@@ -204,22 +204,6 @@ async def remove_baby(text):
 async def delete_all_quizzes(client, message: Message):
     result = questions_collection.delete_many({})
     await message.reply(f"✅ Deleted {result.deleted_count} quiz records from the database.")
-
-async def subscribe(app, message):
-    if LOG_GROUP:
-        try:
-          user = await app.get_chat_member(LOG_GROUP, message.from_user.id)
-          if str(user.status) == "ChatMemberStatus.BANNED":
-              await message.reply_text("You are Banned. Contact -- Team SPY")
-              return 1
-        except UserNotParticipant:
-            caption = f"Join our channel to use the bot"
-            await message.reply_photo(photo="https://graph.org/file/d44f024a08ded19452152.jpg",caption=caption, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"https://t.me/studyhelppdf")]]))
-            return 1
-        except Exception:
-            await message.reply_text("Something Went Wrong. Contact us Team SPY...")
-            return 1
-
 async def send_document_http(chat_id: int, file_id: str, caption: str):
     payload = {
         "chat_id": chat_id,
