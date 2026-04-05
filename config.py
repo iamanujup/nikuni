@@ -22,7 +22,7 @@ API_HASH  = os.getenv("API_HASH", "3cb93a9a9345592f5e6a42020687cdbe")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8608594817:AAEdTzPgYcsbtP9rh1mqMck7824YUl3csME")
 
 # ── Telegram — secondary bot token used for HTML/API calls ───────────────────
-BOT_TOKEN_2 = os.getenv("BOT_TOKEN_2", "7895013312:AAHwta9JGTtMZmZBsRZtI1-wGvx1DmYwkQg")
+BOT_TOKEN_2 = os.getenv("BOT_TOKEN_2", "8608594817:AAEdTzPgYcsbtP9rh1mqMck7824YUl3csME")
 
 # ── MongoDB ───────────────────────────────────────────────────────────────────
 MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://iamanujup79_db_user:iamanujup79_db_user@cluster0.yscdiem.mongodb.net/?appName=Cluster0")          # Primary connection string
