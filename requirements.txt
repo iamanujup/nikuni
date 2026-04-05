@@ -23,7 +23,7 @@ beautifulsoup4==4.12.3
 lxml==5.1.0                # faster BS4 parser
 
 # ── Image processing ─────────────────────────────────────────
-Pillow==10.2.0
+Pillow==10.0.0
 
 # ── Math / LaTeX ─────────────────────────────────────────────
 sympy==1.12
