@@ -376,9 +376,6 @@ async def transfer_quizzes(client, m):
 
 @app.on_message(filters.command("add") & filters.private)
 async def add_authorized_user(client, message: Message):
-    check = await subscribe(app, message)
-    if check:  # If user is not subscribed, return early
-        return
         
     args = message.text.split()
     try:
@@ -582,9 +579,6 @@ async def send_quiz_page(client, message, quizzes, page_number, user_id, search_
 @app.on_message(filters.command("myquizzes") & filters.private)
 async def list_user_quizzes(client, message: Message):
 
-    check = await subscribe(app, message)
-    if check:  # If user is not subscribed, return early
-        return
         
     user_id = message.from_user.id
     
@@ -809,9 +803,6 @@ user_create_limits = {}
 
 @app.on_message(filters.command("create") & filters.private)
 async def create_quiz(client, message: Message):
-    check = await subscribe(app, message)
-    if check:  # If user is not subscribed, return early
-        return
 
     user_id = message.from_user.id
     now = datetime.now()
