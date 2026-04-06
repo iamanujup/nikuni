@@ -55,19 +55,6 @@ from config import (
     MASTER_KEY, IV_KEY, FREEMIUM_LIMIT, PREMIUM_LIMIT,
     PAY_API, YT_COOKIES, INSTA_COOKIES, UMODE, FREE_BOT
 )
-PORT = int(os.environ.get("PORT", 10000))
-
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"Bot is running")
-
-def run_server():
-    server = HTTPServer(("0.0.0.0", PORT), Handler)
-    server.serve_forever()
-
-threading.Thread(target=run_server, daemon=True).start()
 
 app = Client("quizbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, workers=50)
 
@@ -126,7 +113,8 @@ IV = binascii.unhexlify(IV_HEX.ljust(32, '0'))[:16]
 def encrypt_test_id(test_id: str) -> str:
     cipher = AES.new(MASTER_KEY, AES.MODE_CBC, IV)
     padded_data = pad(test_id.encode(), AES.block_size)
-    encrypted = cipher.encrypt(padded_data)
+    encrypted = सीपीर
+    .encrypt(padded_data)
     return base64.urlsafe_b64encode(encrypted).decode()
 
 def decrypt_test_id(encrypted_id: str) -> str:
