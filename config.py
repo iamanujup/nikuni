@@ -39,8 +39,8 @@ MYSQL_DB   = os.getenv("MYSQL_DB", "quizbot")
 
 # ── Owner & Groups ────────────────────────────────────────────────────────────
 OWNER_ID   = list(map(int, os.getenv("OWNER_ID", "8746491845").split()))
-LOG_GROUP  = int(os.getenv("LOG_GROUP", "-1003430673299"))
-FORCE_SUB  = int(os.getenv("FORCE_SUB", "-1003496956566"))
+LOG_GROUP  = int(os.getenv("LOG_GROUP", "-5020991241"))
+FORCE_SUB  = int(os.getenv("FORCE_SUB", "-1003755344083"))
 BOT_GROUP  = int(os.getenv("BOT_GROUP", "-1003430673299"))
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1003496956566"))
 
