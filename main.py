@@ -11,19 +11,6 @@
 ║  License       : MIT                                                     ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 """
-PORT = int(os.environ.get("PORT", 10000))
-
-class Handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"Bot is running")
-
-def run_server():
-    server = HTTPServer(("0.0.0.0", PORT), Handler)
-    server.serve_forever()
-
-threading.Thread(target=run_server, daemon=True).start()
 import asyncio, aiohttp, html, io, json, logging, os, random, re, string, sys, traceback, fractions, uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional, Tuple
@@ -70,7 +57,19 @@ from config import (
 )
 
 app = Client("quizbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, workers=50)
+PORT = int(os.environ.get("PORT", 10000))
 
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running")
+
+def run_server():
+    server = HTTPServer(("0.0.0.0", PORT), Handler)
+    server.serve_forever()
+
+threading.Thread(target=run_server, daemon=True).start()
 # ── Database connections ──────────────────────────────────────────────────────
 client_db = pymongo.MongoClient(MONGO_URI)
 db = client_db[DB_NAME]
