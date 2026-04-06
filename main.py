@@ -11,6 +11,19 @@
 ║  License       : MIT                                                     ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 """
+PORT = int(os.environ.get("PORT", 10000))
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running")
+
+def run_server():
+    server = HTTPServer(("0.0.0.0", PORT), Handler)
+    server.serve_forever()
+
+threading.Thread(target=run_server, daemon=True).start()
 import asyncio, aiohttp, html, io, json, logging, os, random, re, string, sys, traceback, fractions, uuid
 from datetime import datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional, Tuple
