@@ -55,8 +55,6 @@ from config import (
     MASTER_KEY, IV_KEY, FREEMIUM_LIMIT, PREMIUM_LIMIT,
     PAY_API, YT_COOKIES, INSTA_COOKIES, UMODE, FREE_BOT
 )
-
-app = Client("quizbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, workers=50)
 PORT = int(os.environ.get("PORT", 10000))
 
 class Handler(BaseHTTPRequestHandler):
@@ -70,6 +68,8 @@ def run_server():
     server.serve_forever()
 
 threading.Thread(target=run_server, daemon=True).start()
+app = Client("quizbot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, workers=50)
+
 # ── Database connections ──────────────────────────────────────────────────────
 client_db = pymongo.MongoClient(MONGO_URI)
 db = client_db[DB_NAME]
